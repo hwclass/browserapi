@@ -1,10 +1,10 @@
 var browserapi = (function () {
    
-   var fullScreenApi;
+   let fullScreenApi;
 
    return {
-      getFullScreenApi: function (element) {
-         var instance = null;
+      getFullScreenApi: (element) => {
+         let instance = null;
         if(element.requestFullscreen) {
           instance = element.requestFullscreen();
         } else if(element.mozRequestFullScreen) {
@@ -16,9 +16,9 @@ var browserapi = (function () {
         }
         return instance;
       },
-      getBattery : function () {
+      getBattery : () => {
          var instance = null;
-         navigator.getBattery().then(function (battery) {
+         navigator.getBattery().then((battery) => {
             return battery;
          })
       }
