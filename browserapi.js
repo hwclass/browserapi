@@ -16,7 +16,7 @@ var browserapi = (function () {
         }
         return instance;
       },
-      getBattery : () => {
+      getBattery: () => {
          navigator.getBattery().then((battery) => {
             return battery;
          })
