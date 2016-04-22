@@ -18,34 +18,39 @@
 
 var browserapi = (function () {
    
-   const fullScreenApi;
+   const fullScreenApi = null;
 
    return {
-      get : {
-        fullScreenApi: (element) => {
-           const instance = null;
-          if(element.requestFullscreen) {
-            instance = element.requestFullscreen();
-          } else if(element.mozRequestFullScreen) {
-            instance = element.mozRequestFullScreen();
-          } else if(element.webkitRequestFullscreen) {
-            instance = element.webkitRequestFullscreen();
-          } else if(element.msRequestFullscreen) {
-            instance = element.msRequestFullscreen();
-          }
-          return instance;
-        },
-        battery: () => {
-           navigator.getBattery().then((battery) => {
-              return battery;
-           })
-        },
-        serviceWorker: () => {
-          if(!!navigator.serviceWorker) {
-            return navigator.serviceWorker;
+      get(name) {
+        const apis = {
+          fullScreenApi : (element) => {
+            const instance = null;
+            if(element.requestFullscreen) {
+              instance = element.requestFullscreen();
+            } else if(element.mozRequestFullScreen) {
+              instance = element.mozRequestFullScreen();
+            } else if(element.webkitRequestFullscreen) {
+              instance = element.webkitRequestFullscreen();
+            } else if(element.msRequestFullscreen) {
+              instance = element.msRequestFullscreen();
+            }
+            return instance;
+          },
+          battery : () => {
+            if (!!navigator.battery) {
+              return navigator.getBattery().then((battery) => {
+                return callback(battery);
+              });
+            }
+          },
+          serviceWorker : (instance) => {
+            if(!!navigator.serviceWorker) {
+              instance(navigator.serviceWorker);
+            }
           }
         }
+        return apis[name];
       }
-   }   
+    }   
 
 })();
