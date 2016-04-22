@@ -3,6 +3,13 @@ A wrapper tool for next generation browser apis like vibration, fullscreen, and 
 
 ###Supported APIs
 
+- [x] Geolocation
+```javascript
+browserapi.get('geolocation')((geolocation) => {
+   console.dir(geolocation);
+})
+```
+
 - [x] fetch
 #####usage
 ```browserapi.get('fetch')((fetch) => {

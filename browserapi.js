@@ -21,6 +21,11 @@ var browserapi = (function () {
    return {
       get(name) {
         const apis = {
+          geolocation: (instance) => {
+            if ("geolocation" in navigator) {
+              instance(navigator.geolocation)
+            }
+          },
           fetch: (instance) => {
             if(!!window.fetch) {
               instance(window.fetch);
