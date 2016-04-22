@@ -21,6 +21,11 @@ var browserapi = (function () {
    return {
       get(name) {
         const apis = {
+          fetch: (instance) => {
+            if(!!window.fetch) {
+              instance(window.fetch);
+            }
+          },
           fullScreen: (element, instance) => {
             const fullScreen = null;
             if(element.requestFullscreen) {

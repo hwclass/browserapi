@@ -3,6 +3,11 @@ A wrapper tool for next generation browser apis like vibration, fullscreen, and 
 
 ###Supported APIs
 
+- [x] fetch
+```browserapi.get('fetch')((fetch) => {
+   console.dir(fetch);
+})```
+
 - [x] Fullscreen API
 ```browserapi.get('fullScreen')(document.querySelector('<element>'), (fullScreen)=>{
    console.dir(fullScreen);
