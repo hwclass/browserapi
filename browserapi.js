@@ -1,3 +1,21 @@
+/*!
+ * browserapi.js. A simple wrapper for browser apis.
+ *
+ * Copyright (c) 2015 Barış Güler
+ * http://hwclass.in
+ *
+ * Licensed under MIT
+ * http://www.opensource.org/licenses/mit-license.php
+ *
+ *
+ * Launch  : April 2016
+ * Version : 0.1.0
+ * Released: April 5th, 2016
+ *
+ *
+ * Provides a middleware for new browser api interfaces.
+ */
+
 var browserapi = (function () {
    
    let fullScreenApi;
