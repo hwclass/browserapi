@@ -17,24 +17,22 @@
  */
 
 var browserapi = (function () {
-   
-   const fullScreenApi = null;
 
    return {
       get(name) {
         const apis = {
-          fullScreenApi: (element) => {
-            const instance = null;
+          fullScreen: (element, instance) => {
+            const fullScreen = null;
             if(element.requestFullscreen) {
-              instance = element.requestFullscreen();
+              fullScreen = element.requestFullscreen();
             } else if(element.mozRequestFullScreen) {
-              instance = element.mozRequestFullScreen();
+              fullScreen = element.mozRequestFullScreen();
             } else if(element.webkitRequestFullscreen) {
-              instance = element.webkitRequestFullscreen();
+              fullScreen = element.webkitRequestFullscreen();
             } else if(element.msRequestFullscreen) {
-              instance = element.msRequestFullscreen();
+              fullScreen = element.msRequestFullscreen();
             }
-            return instance;
+            return instance(fullScreen);
           },
           battery: (instance) => {
             if (!!navigator.getBattery) {
