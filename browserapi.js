@@ -23,7 +23,7 @@ var browserapi = (function () {
    return {
       get(name) {
         const apis = {
-          fullScreenApi : (element) => {
+          fullScreenApi: (element) => {
             const instance = null;
             if(element.requestFullscreen) {
               instance = element.requestFullscreen();
@@ -36,14 +36,14 @@ var browserapi = (function () {
             }
             return instance;
           },
-          battery : () => {
-            if (!!navigator.battery) {
-              return navigator.getBattery().then((battery) => {
-                return callback(battery);
-              });
+          battery: (instance) => {
+            if (!!navigator.getBattery) {
+              navigator.getBattery().then((battery) => {
+                instance(battery);
+              })
             }
           },
-          serviceWorker : (instance) => {
+          serviceWorker: (instance) => {
             if(!!navigator.serviceWorker) {
               instance(navigator.serviceWorker);
             }
