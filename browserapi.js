@@ -16,7 +16,7 @@
  * Provides a middleware for new browser api interfaces.
  */
 
-const browserapi = (function () {
+;var browserapi = (function () {
    return {
       get(name) {
         const apis = {
@@ -83,7 +83,7 @@ const browserapi = (function () {
         }
 
         return apis[name];
-        
+
       }
     }   
 

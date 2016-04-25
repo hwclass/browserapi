@@ -4,35 +4,53 @@ A wrapper tool for next generation browser apis like vibration, fullscreen, and 
 ###Supported APIs
 
 - [x] Geolocation
+- [x] fetch
+- [x] Fullscreen API
+- [x] Battery
+- [x] ServiceWorker
+
+####Geolocation
 ```javascript
 browserapi.get('geolocation')((geolocation) => {
-   console.dir(geolocation);
-})
+  geolocation.getCurrentPosition(function (data) {
+    console.dir(data); //successfully get the Geoposition data
+  }, function (err) {
+    console.dir(err); // logs the error stack
+  }, {
+    enableHighAccuracy: true,
+    timeout: 5000,
+    maximumAge: 0
+  }); //options while getting geolocation data
+});
 ```
 
-- [x] fetch
-#####usage
-```browserapi.get('fetch')((fetch) => {
-   console.dir(fetch);
-})```
-
-- [x] Fullscreen API
-#####usage
+####fetch
 ```javascript
-browserapi.get('fullScreen')(document.querySelector('<element>'), (fullScreen)=>{
-   console.dir(fullScreen);
-})
+browserapi.get('fetch')((fetch) => {
+  fetch(new Request('<URL>')).then(function (data) {
+    console.dir(data);
+  });
+});
+```
+
+#####Fullscreen API
+```javascript
+browserapi.get('fullScreen')(document.querySelector('body'), (fullScreen) => {
+  console.dir(fullScreen);
+});
 ```
 #####Note : This method invocation prints "Failed to execute 'requestFullScreen' on 'Element': API can only be initiated by a user gesture.". Since the security concerns, it only can be triggered by a user event like click or etc. 
 
-- [x] Battery
-#####usage
-```browserapi.get('battery')((battery) => {
-   console.dir(battery);
-})```
+####Battery
+```javascript
+browserapi.get('battery')((battery) => {
+  console.dir(battery);
+});
+```
 
-- [x] ServiceWorker
-#####usage
-```browserapi.get('serviceWorker')((serviceWorker) => {
+####ServiceWorker
+```javascript
+browserapi.get('serviceWorker')((serviceWorker) => {
   console.dir(instance);
-})```
+});
+```
