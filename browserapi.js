@@ -16,21 +16,35 @@
  * Provides a middleware for new browser api interfaces.
  */
 
-var browserapi = (function () {
-
+const browserapi = (function () {
    return {
       get(name) {
         const apis = {
+          
+          /**
+          * Geolocation : The HTML Geolocation API is used to locate a user's position.
+          * @param {function} instance
+          */
           geolocation: (instance) => {
             if ("geolocation" in navigator) {
               instance(navigator.geolocation)
             }
           },
+   
+          /**
+          * fetch : The fetch API is used to do requests and send responses.
+          * @param {function} instance
+          */
           fetch: (instance) => {
             if(!!window.fetch) {
               instance(window.fetch);
             }
           },
+
+          /**
+          * fullScreen : The fullScreen API is used to make some canvas to be fully-widened
+          * @param {function} instance
+          */
           fullScreen: (element, instance) => {
             const fullScreen = null;
             if(element.requestFullscreen) {
@@ -44,6 +58,11 @@ var browserapi = (function () {
             }
             return instance(fullScreen);
           },
+
+          /**
+          * battery : The battery API is used to get the current status of the battery
+          * @param {function} instance
+          */
           battery: (instance) => {
             if (!!navigator.getBattery) {
               navigator.getBattery().then((battery) => {
@@ -51,13 +70,20 @@ var browserapi = (function () {
               })
             }
           },
+
+          /**
+          * serviceWorker : The serviceWorker API is used to make some job done in the background
+          * @param {function} instance
+          */
           serviceWorker: (instance) => {
             if(!!navigator.serviceWorker) {
               instance(navigator.serviceWorker);
             }
           }
         }
+
         return apis[name];
+        
       }
     }   
 
