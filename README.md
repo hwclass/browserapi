@@ -54,3 +54,11 @@ browserapi.get('serviceWorker')((serviceWorker) => {
   console.dir(instance);
 });
 ```
+
+####localStorage
+```javascript
+browserapi.get('localStorage')((localStorage) => {
+   localStorage.setItem('some_data', '{some_data : "yes, cool..."}');
+   console.dir(localStorage.getItem('some_data'));
+})İ
+```

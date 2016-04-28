@@ -79,6 +79,16 @@
             if(!!navigator.serviceWorker) {
               instance(navigator.serviceWorker);
             }
+          },
+
+          /**
+          * localStorage : The localStorage API is used to manage some browser-specific data
+          * @param {function} instance
+          */
+          localStorage: (instance) => {
+            if (!!window.localStorage) {
+              instance(window.localStorage);
+            }
           }
         }
 
