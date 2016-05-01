@@ -69,3 +69,10 @@ browserapi.get('deviceOrientation')((deviceOrientation) => {
    console.dir(deviceOrientation);
 });
 ```
+
+####vibrate
+```javascript
+browserapi.get('vibrate')((vibrate) => {
+   navigator['vibrate'](1000);
+});
+```

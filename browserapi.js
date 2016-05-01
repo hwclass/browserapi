@@ -100,6 +100,17 @@
             if (!!window.DeviceOrientationEvent) {
               instance(window.DeviceOrientationEvent);
             }
+          },
+
+          /**
+          * vibrate : The Vibrate API is used to experiment the vibration functionalities on browsers
+          * @param {function} instance
+          * return {function} DeviceOrientationEvent
+          */
+          vibrate: (instance) => {
+            if (!!navigator.vibrate) {
+              instance(navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate || null);
+            }  
           }
         }
 
