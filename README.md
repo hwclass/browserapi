@@ -8,6 +8,8 @@ A wrapper tool for next generation browser apis like vibration, fullscreen, and 
 - [x] Fullscreen API
 - [x] Battery
 - [x] ServiceWorker
+- [x] DeviceOrientation
+- [x] Vibrate
 
 ####Geolocation
 ```javascript
