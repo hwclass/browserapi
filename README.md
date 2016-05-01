@@ -60,5 +60,12 @@ browserapi.get('serviceWorker')((serviceWorker) => {
 browserapi.get('localStorage')((localStorage) => {
    localStorage.setItem('some_data', '{some_data : "yes, cool..."}');
    console.dir(localStorage.getItem('some_data'));
-})İ
+});
+```
+
+####deviceOrientation
+```javascript
+browserapi.get('deviceOrientation')((deviceOrientation) => {
+   console.dir(deviceOrientation);
+});
 ```

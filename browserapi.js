@@ -89,6 +89,17 @@
             if (!!window.localStorage) {
               instance(window.localStorage);
             }
+          },
+
+          /**
+          * deviceOrientation : The DeviceOrientation API is used to work on orientation of a device
+          * @param {function} instance
+          * return {function} DeviceOrientationEvent
+          */
+          deviceOrientation: (instance) => {
+            if (!!window.DeviceOrientationEvent) {
+              instance(window.DeviceOrientationEvent);
+            }
           }
         }
 
