@@ -10,6 +10,7 @@ A wrapper tool for next generation browser apis like vibration, fullscreen, and 
 - [x] ServiceWorker
 - [x] DeviceOrientation
 - [x] Vibrate
+- [x] AudioContext
 
 ####Geolocation
 ```javascript
@@ -76,5 +77,11 @@ browserapi.get('deviceOrientation')((deviceOrientation) => {
 ```javascript
 browserapi.get('vibrate')((vibrate) => {
    navigator['vibrate'](1000);
+});
+
+####audioContext
+```javascript
+browserapi.get('audioContext')((audioContext) => {
+  console.dir(audioContext);
 });
 ```

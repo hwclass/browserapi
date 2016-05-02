@@ -111,6 +111,18 @@
             if (!!navigator.vibrate) {
               instance(navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate || null);
             }  
+          },
+
+          /**
+          * audioContext : The Web Audio API is used to create sounds
+          * @param {function} instance
+          * return {function} AudioContext
+          */
+          audioContext: (instance) => {
+            const audioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext
+            if (!!audioContext) {
+              instance(AudioContext);
+            }
           }
         }
 
