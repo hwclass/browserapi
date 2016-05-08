@@ -13,7 +13,7 @@
  * Released: April 5th, 2016
  *
  *
- * Provides a middleware for new browser api interfaces.
+ * Provides a browser api middleware for new browser api interfaces.
  */
 
 ;const browserapi = ( () => {
