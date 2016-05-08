@@ -78,10 +78,11 @@ browserapi.get('deviceOrientation')((deviceOrientation) => {
 browserapi.get('vibrate')((vibrate) => {
    navigator['vibrate'](1000);
 });
+```
 
 ####audioContext
 ```javascript
 browserapi.get('audioContext')((audioContext) => {
-  console.dir(audioContext);
+   console.dir(audioContext);
 });
 ```
