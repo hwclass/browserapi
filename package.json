@@ -1,0 +1,25 @@
+{
+  "name": "browserapi",
+  "version": "1.0.0",
+  "description": "Provides a browser api middleware for new browser api interfaces.",
+  "main": "browserapi.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hwclass/browserapi.git"
+  },
+  "keywords": [
+    "browser",
+    "browsers",
+    "api",
+    "middleware"
+  ],
+  "author": "hwclass",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hwclass/browserapi/issues"
+  },
+  "homepage": "https://github.com/hwclass/browserapi#readme"
+}
