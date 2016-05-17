@@ -11,6 +11,7 @@ A wrapper tool for next generation browser apis like vibration, fullscreen, and 
 - [x] DeviceOrientation
 - [x] Vibrate
 - [x] AudioContext
+- [x] caches
 
 ####Geolocation
 ```javascript
