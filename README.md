@@ -86,3 +86,10 @@ browserapi.get('audioContext')((audioContext) => {
    console.dir(audioContext);
 });
 ```
+
+####caches
+```javascript
+browserapi.get('caches')((caches) => {
+   console.dir(caches);
+})
+```

@@ -123,6 +123,17 @@
             if (!!audioContext) {
               instance(AudioContext);
             }
+          },
+
+          /**
+          * caches : The cache api for storing data as keys and values
+          * @param {function} instance
+          * return {CacheStorage} caches
+          */
+          caches: (instance) => {
+            if (!!window.caches) {
+              instance(caches);
+            }
           }
         }
 
