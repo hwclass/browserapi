@@ -1,7 +1,7 @@
 # browserapi
 A wrapper tool for next generation browser apis like vibration, fullscreen, and etc.
 
-###Supported APIs
+### Supported APIs
 
 - [x] Geolocation
 - [x] fetch
@@ -13,7 +13,7 @@ A wrapper tool for next generation browser apis like vibration, fullscreen, and 
 - [x] AudioContext
 - [x] caches
 
-####Geolocation
+#### Geolocation
 ```javascript
 browserapi.get('geolocation')((geolocation) => {
   geolocation.getCurrentPosition(function (data) {
@@ -28,7 +28,7 @@ browserapi.get('geolocation')((geolocation) => {
 });
 ```
 
-####fetch
+#### fetch
 ```javascript
 browserapi.get('fetch')((fetch) => {
   fetch(new Request('<URL>')).then(function (data) {
@@ -37,29 +37,28 @@ browserapi.get('fetch')((fetch) => {
 });
 ```
 
-#####Fullscreen API
+##### Fullscreen API
 ```javascript
 browserapi.get('fullScreen')(document.querySelector('body'), (fullScreen) => {
   console.dir(fullScreen);
 });
 ```
-#####Note : This method invocation prints "Failed to execute 'requestFullScreen' on 'Element': API can only be initiated by a user gesture.". Since the security concerns, it only can be triggered by a user event like click or etc. 
+##### Note : This method invocation prints "Failed to execute 'requestFullScreen' on 'Element': API can only be initiated by a user gesture.". Since the security concerns, it only can be triggered by a user event like click or etc. 
 
-####Battery
+#### Battery
 ```javascript
-browserapi.get('battery')((battery) => {
-  console.dir(battery);
-});
+browserapi.get('battery')((battery) => console.log(battery.level));
+//logs 0.97
 ```
 
-####ServiceWorker
+#### ServiceWorker
 ```javascript
 browserapi.get('serviceWorker')((serviceWorker) => {
   console.dir(instance);
 });
 ```
 
-####localStorage
+#### localStorage
 ```javascript
 browserapi.get('localStorage')((localStorage) => {
    localStorage.setItem('some_data', '{some_data : "yes, cool..."}');
@@ -67,28 +66,28 @@ browserapi.get('localStorage')((localStorage) => {
 });
 ```
 
-####deviceOrientation
+#### deviceOrientation
 ```javascript
 browserapi.get('deviceOrientation')((deviceOrientation) => {
    console.dir(deviceOrientation);
 });
 ```
 
-####vibrate
+#### vibrate
 ```javascript
 browserapi.get('vibrate')((vibrate) => {
    navigator['vibrate'](1000);
 });
 ```
 
-####audioContext
+#### audioContext
 ```javascript
 browserapi.get('audioContext')((audioContext) => {
    console.dir(audioContext);
 });
 ```
 
-####caches
+#### caches
 ```javascript
 browserapi.get('caches')((caches) => {
    console.dir(caches);
