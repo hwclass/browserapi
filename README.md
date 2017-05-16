@@ -51,14 +51,14 @@ browserapi.get('battery')((battery) => console.log(battery.level));
 //logs 0.97
 ```
 
-#### ServiceWorker
+#### Service Worker
 ```javascript
 browserapi.get('serviceWorker')((serviceWorker) => {
   console.dir(instance);
 });
 ```
 
-#### localStorage
+#### Local Storage
 ```javascript
 browserapi.get('localStorage')((localStorage) => {
    localStorage.setItem('some_data', '{some_data : "yes, cool..."}');
@@ -66,7 +66,7 @@ browserapi.get('localStorage')((localStorage) => {
 });
 ```
 
-#### deviceOrientation
+#### Device Orientation
 ```javascript
 browserapi.get('deviceOrientation')((deviceOrientation) => {
    console.dir(deviceOrientation);
@@ -87,7 +87,7 @@ browserapi.get('audioContext')((audioContext) => {
 });
 ```
 
-#### caches
+#### Caches API
 ```javascript
 browserapi.get('caches')((caches) => {
    console.dir(caches);
